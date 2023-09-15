@@ -2,20 +2,14 @@
   <main class="main">
     <section class="section1 width-50">
     <div class="form">
-    <h1>Formulario</h1>
-    <label>Articulo:</label>
-    <br>
-    <input type="text" v-model="articulo"> 
-    <br>
-    <label>Cantidad:</label>
-    <br>
-    <input type="text" v-model="cantidad"> 
-    <br>
-    <label>Valor unitario:</label>
-    <br>
-    <input type="text" v-model="valorUnitario">
-    <button @click="agregar">Agregar</button>
-    
+      <h1>Formulario</h1>
+      <label>Articulo:</label>
+      <input type="text" v-model="articulo"> 
+      <label>Cantidad:</label>
+      <input type="text" v-model="cantidad"> 
+      <label>Valor unitario:</label>
+      <input type="text" v-model="valorUnitario">
+     <button @click="agregar">Agregar</button> 
   </div>
   </section>
   <section class="section2">
@@ -64,41 +58,47 @@ export default {
 }
 
 .section1 {
-  background-color: lightblue;
   padding: 20px;
-  height: 300px;
+  height:300px; 
   width: 20vw;
 }
 
 .section2 {
-  background-color: lightgreen;
   padding: 20px;
   height: 300px;
   width: 30vw;
-  overflow-y: auto;
+  
 
 }
-
-
-/* Estilo para las etiquetas */
+.form{
+margin: 2%;
+border-radius: 5px;
+border: 1px solid;
+background-color: lightblue;
+}
+h1{
+text-align: center;}
 label {
   font-weight: bold;
   margin-bottom: 5px;
 }
 
-/* Estilo para los inputs */
 input {
   padding: 5px;
-  width: 100%;
+  margin: 5px;
+  width: 90%;
 }
 
-/* Estilo para el botón */
 button {
+display: block;
   padding: 10px;
   margin: 15px;
   background-color: #007BFF;
   color: white;
   cursor: pointer;
+  border-radius: 8%;
+
+
 }
 
 button:hover {
