@@ -73,17 +73,33 @@ export default {
       let totalCompra = 0;
       let descuento=0;
       let impDes="";
+      let bandera=0;
       for (let i = 0; i < this.articulos.length; i++) {
         totalCompra += this.articulos[i].cantidad * this.articulos[i].valorUnitario; 
-        if (i >= 5 ){
-          descuento= (totalCompra*0.10)
-          impDes="10%"
+        if (totalCompra >= 240000 && i<5  ) {
+                         descuento = ( totalCompra * 0.15);       
+              impDes =" 15% de descuento"
+            } else if (totalCompra >= 120000 && i<5 ) {
+              descuento = ( totalCompra * 0.10); 
+              impDes ="10% de descuento"
+            } else if (totalCompra >= 60000 && i<5 ) {
+              descuento =( totalCompra * 0.05);         
+                impDes ="5% de descuento"
+            }else
+        if (i >= 5) {
+          descuento = ( totalCompra * 0.10);           
+          impDes ="10% de descuento"
+            
         }
-        if(i >= 11 ){
-          descuento= (totalCompra*0.20)
-          impDes="20%"
-      }
+        if (i >= 11) {
+            descuento = ( totalCompra * 0.20); 
+            impDes =" 20% de descuento"
+            }
+        
     }
+    
+        
+
       this.totalCompras = totalCompra;
       this.descuento= descuento;
       this.impDes= impDes;
