@@ -32,7 +32,7 @@
     </table>
   </section>
   <section>
-    <h2>Total de Compras: {{ totalCompras }}</h2>
+    <h2 >Total de Compras: {{ totalCompras }}</h2>
     <h2>Descuento: {{ descuento }}</h2>
     <h2>Descuento: {{ impDes }}</h2>
     <h2>Total de pagar: {{ total }}</h2>
@@ -76,16 +76,18 @@ export default {
       let bandera=0;
       for (let i = 0; i < this.articulos.length; i++) {
         totalCompra += this.articulos[i].cantidad * this.articulos[i].valorUnitario; 
-        if (totalCompra >= 240000 && i<5  ) {
-                         descuento = ( totalCompra * 0.15);       
+        if (i<=11){
+            if (totalCompra >= 240000) {
+              descuento = ( totalCompra * 0.15);
               impDes =" 15% de descuento"
-            } else if (totalCompra >= 120000 && i<5 ) {
+            } else if (totalCompra >= 120000  ) {
               descuento = ( totalCompra * 0.10); 
               impDes ="10% de descuento"
-            } else if (totalCompra >= 60000 && i<5 ) {
+            }else if (totalCompra >= 60000) {
               descuento =( totalCompra * 0.05);         
                 impDes ="5% de descuento"
-            }else
+            }
+        }
         if (i >= 5) {
           descuento = ( totalCompra * 0.10);           
           impDes ="10% de descuento"
@@ -97,9 +99,6 @@ export default {
             }
         
     }
-    
-        
-
       this.totalCompras = totalCompra;
       this.descuento= descuento;
       this.impDes= impDes;
